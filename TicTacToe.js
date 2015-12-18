@@ -17,6 +17,7 @@ window.onload = function () {
 
     var btnNewGame = document.getElementById('newGame')
     btnNewGame.addEventListener("click", NewGame, false)
+    document.getElementById('nextPage').addEventListener("click", nextPage, false)
 }
 
 function InitCellsArray() {
@@ -176,4 +177,10 @@ function CheckFullBoard() {
             fullBoard = true;
     }
     return fullBoard;
+}
+
+//// Navigation ////
+
+function nextPage() {
+    location.assign("nextPage.html");
 }
