@@ -9,5 +9,5 @@
   </author>
   <content src="index.html" />
   <access origin="*" />
-  <icon src="icon.png" platform="android"/>
+  <icon src="icon.png" gap:platform="android"/>
 </widget>
