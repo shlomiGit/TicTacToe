@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget id="" version="0.0.1">
+  <name>TicTacToe</name>
+  <description>
+    A test project for cord
+  </description>
+  <author email="" href="">
+    Shlomi
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <!-- PhoneGap plugins for PhoneGap Build to attach to build -->
+  <gap:plugin name="cordova.custom.plugins.exitapp" version="1.0.0" /> <!--source="pgb" />-->
+</widget>
