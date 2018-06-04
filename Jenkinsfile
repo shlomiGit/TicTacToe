@@ -12,6 +12,9 @@ pipeline {
     post {
         always {
             echo 'build status is %BUILD_STATUS%'
+            mail to: 'mail_s@walla.com',
+             subject: "Campleted Pipeline: ${currentBuild.fullDisplayName}",
+             body: "%BUILD_ID% has completed"
         }
     }
 }
