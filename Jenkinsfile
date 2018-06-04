@@ -10,6 +10,8 @@ pipeline {
         }
     }
     post {
-        echo 'build status is %BUILD_STATUS%'
+        always {
+            echo 'build status is %BUILD_STATUS%'
+        }
     }
 }
