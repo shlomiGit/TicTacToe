@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Building'
                 bat 'echo building %BUILD_ID%'
+                sh 'echo echoing from sh, on build %BUILD_ID%'
                 input 'ECHO RECEIVED CORRECTLY?'
             }
         }
