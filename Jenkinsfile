@@ -1,7 +1,8 @@
 pipeline {
-	agent { docker { image '$imageForDocker' } }
+	agent none
 	stages {
         	stage('BuildWindows') {
+			agent { docker { image 'dockcross/windows-x64' } }
 			when {
 				not { expression { isUnix() } }
 			}
@@ -11,6 +12,7 @@ pipeline {
 			}
         	}
 		stage('BuildLinux'){
+			agent { docker { image 'Alpine' } }
 			when {
 				expression { isUnix() }
 			}
@@ -20,6 +22,7 @@ pipeline {
 			}
 		}
 		stage('BuildAny'){	
+			agent any
                 	input {
 				message "ECHO RECEIVED CORRECTLY?"
 			}
