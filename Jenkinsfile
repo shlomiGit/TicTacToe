@@ -22,7 +22,7 @@ pipeline {
 			steps {
                 	echo 'Building Linux'
 	                sh 'echo echoing from sh, on build $BUILD_ID'
-			sh 'echo parameter value is: ${params.exampleParameter}
+			sh 'echo parameter value is: ${params.exampleParameter}'
 			}
 		}
 		stage('BuildAny'){	
