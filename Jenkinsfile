@@ -1,14 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building'
-                bat 'echo building %BUILD_ID%'
-                sh 'echo echoing from sh, on build %BUILD_ID%'
-                input 'ECHO RECEIVED CORRECTLY?'
+        stage('BuildWindows') {
+		when {
+			not { isUnix() }
+		}
+		steps {
+                echo 'Building Windows'
+                bat 'echo echoing from bat, on build %BUILD_ID%'
             }
         }
+	stage('BuildLinux'){
+		when {
+			isUnix()
+		}
+		steps {
+                echo 'Building Linux'
+                sh 'echo echoing from sh, on build %BUILD_ID%'
+		}
+	}
+	stage('BuildAny'){		
+                input 'ECHO RECEIVED CORRECTLY?'
+	}
     }
     post {
         always {
