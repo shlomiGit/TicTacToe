@@ -1,7 +1,7 @@
 pipeline {
 	agent none
 	parameters {
-		string(name: 'exampleParameter' defaultValue: 'defaultExampleParameter')
+		string(name: 'exampleParameter', defaultValue: 'defaultExampleParameter')
 	}
 	stages {
         	stage('BuildWindows') {
