@@ -1,5 +1,5 @@
 pipeline {
-	agent { docker { image 'dockcross/windows-x64' } }
+	agent { docker { image '$imageForDocker' } }
 	stages {
         	stage('BuildWindows') {
 			when {
