@@ -16,7 +16,7 @@ pipeline {
 			}
 			steps {
                 	echo 'Building Linux'
-	                sh 'echo echoing from sh, on build %BUILD_ID%'
+	                sh 'echo echoing from sh, on build $BUILD_ID'
 			}
 		}
 		stage('BuildAny'){	
@@ -30,10 +30,7 @@ pipeline {
 	}
 	post {
         	always {
-			echo 'build status is %BUILD_STATUS%'
-			mail to: 'mail_s@walla.com',
-			subject: "Campleted Pipeline: ${currentBuild.fullDisplayName}",
-			body: "%BUILD_ID% has completed"
+			echo 'build status is $BUILD_STATUS'
 		}
 	}
 }
