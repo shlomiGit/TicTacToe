@@ -1,7 +1,7 @@
 pipeline {
 	agent none
 	parameters {
-		string(name: 'exampleParameter', defaultValue: 'defaultExampleParameter')
+		string(name: 'exampleParameter',  defaultValue: 'defaultExampleParameter')
 	}
 	stages {
         	stage('BuildWindows') {
@@ -15,7 +15,7 @@ pipeline {
 			}
         	}
 		stage('BuildLinux'){
-			agent { docker { image 'alpine' } }
+			agent { docker { image 'jenkins:alpine' } }
 			when {
 				expression { isUnix() }
 			}
