@@ -18,7 +18,7 @@ pipeline {
 			agent { 
 				docker { 
 					image 'jenkins:alpine' 
-					args '-it --entrypoint=/bin/bash'
+					args '-it --entrypoint=/bin/sh'
 					} 
 			}
 			when {
