@@ -15,7 +15,12 @@ pipeline {
 			}
         	}
 		stage('BuildLinux'){
-			agent { docker { image 'jenkins:alpine' } }
+			agent { 
+				docker { 
+					image 'jenkins:alpine' 
+					args '-it --entrypoint=/bin/bash'
+					} 
+			}
 			when {
 				expression { isUnix() }
 			}
