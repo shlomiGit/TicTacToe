@@ -5,7 +5,8 @@ pipeline {
 	stages {
 		stage('Build'){
 			steps {
-				sh 'echo building on cat /proc/self/cgroup | grep pids'
+				sh 'echo building on'
+				sh 'cat /proc/self/cgroup | grep pids'
 			}
 		}
 	}
