@@ -1,9 +1,6 @@
 pipeline {
 	agent {
-		docker { 
-			image 'jenkins:alpine' 
-			args '-it'
-		}
+		dockerfile true
 	}
 	stages {
 		stage('Build'){
