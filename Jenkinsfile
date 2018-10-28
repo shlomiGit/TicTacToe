@@ -4,6 +4,12 @@ pipeline {
 		string(name: 'exampleParameter',  defaultValue: 'defaultExampleParameter')
 	}
 	stages {
+		stage('BuildSelf'){
+			agent {dockerfile true}
+			steps {
+				sh 'echo was build?'
+			}
+		}
         	stage('BuildWindows') {
 			agent { docker { image 'dockcross/windows-x64' } }
 			when {
