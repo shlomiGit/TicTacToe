@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker { 
 			image 'jenkins:alpine' 
-			args '-it --entrypoint=/bin/sh'
+			args '-it'
 		}
 	}
 	stages {
