@@ -1,2 +1,2 @@
 FROM alpine
-CMD ["echo","cat /proc/self/cgroup | grep pids"]
+CMD ["cat","/proc/self/cgroup | grep pids"]
