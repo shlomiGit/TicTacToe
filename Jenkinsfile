@@ -10,7 +10,7 @@ pipeline {
 			steps {
 				sh 'echo building on'
 				sh 'cat /proc/self/cgroup | grep pids'
-				sh 'echo container ID is Container.Id'
+				sh 'echo container ID is Container.Id or ${DOCKER_CONTAINER_ID}'
 				sh 'echo building ${Build_Id}'
 			}
 		}
