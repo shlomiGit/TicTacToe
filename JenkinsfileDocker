@@ -1,0 +1,10 @@
+pipeline {
+	agent {docker { image 'alpine' }}
+	stages {
+		stage('Build'){	
+			steps {
+				bat "echo building %job_name%"
+			}
+		}
+	}
+}
