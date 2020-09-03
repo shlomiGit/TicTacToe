@@ -3,8 +3,7 @@ pipeline {
 	stages {
 		stage('Build'){	
 			steps {
-				bat 'echo building building building'
-				//stam comment
+				bat "echo building %job_name%"
 			}
 		}
 	}
