@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Build'){	
 			steps {
-				sh printenv | grep job_name
+				sh "printenv | grep job_name"
 			}
 		}
 	}
